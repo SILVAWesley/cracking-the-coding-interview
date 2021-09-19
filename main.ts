@@ -15,6 +15,7 @@ import { sumLists } from "./questions/2.5";
 import { checkPalindromeLinkedList } from "./questions/2.6";
 import { checkIntersection } from "./questions/2.7";
 import { checkLoopDetection } from "./questions/2.8";
+import { StackMin } from "./questions/3.2";
 
 function testLinkedList() {
   const linkedList = new LinkedList();
@@ -137,4 +138,18 @@ function testQueue() {
   console.log(queue.toString());
 }
 
-testQueue();
+function testStackMin() {
+  const stack = new StackMin();
+
+  stack.push(2);
+  stack.push(4);
+  stack.push(1);
+  stack.push(10);
+
+  stack.pop();
+  stack.pop();
+
+  console.log(stack.getMin());
+}
+
+testStackMin();
