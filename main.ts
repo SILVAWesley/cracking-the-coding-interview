@@ -2,6 +2,7 @@
  * TODO:
  * 2.5 - Recursive solution
  * 2.6 - Recursive solution
+ * 2.7 - Solution
  */
 
 import { LinkedList } from "./datastructures/linkedlist";
@@ -11,6 +12,7 @@ import { partition } from "./questions/2.4";
 import { sumLists } from "./questions/2.5";
 import { checkPalindromeLinkedList } from "./questions/2.6";
 import { checkIntersection } from "./questions/2.7";
+import { checkLoopDetection } from "./questions/2.8";
 
 function testLinkedList() {
   const linkedList = new LinkedList();
@@ -91,4 +93,16 @@ function testCheckIntersection() {
   console.log(checkIntersection(linkedList.root, linkedList.root.next));
 }
 
-testCheckIntersection();
+function testLoopDetection() {
+  const linkedList = new LinkedList<string>();
+
+  linkedList.add("hello1");
+  linkedList.add("hello2");
+  linkedList.add("hello3");
+  linkedList.add("hello4");
+  linkedList.add("hello1");
+
+  console.log(checkLoopDetection(linkedList));
+}
+
+testLoopDetection();
