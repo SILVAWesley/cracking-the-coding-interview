@@ -6,6 +6,8 @@
  */
 
 import { LinkedList } from "./datastructures/linkedlist";
+import { Stack } from "./datastructures/stack";
+import { Queue } from "./datastructures/queue";
 import { returnKthToLast } from "./questions/2.2";
 import { deleteMiddleNode } from "./questions/2.3";
 import { partition } from "./questions/2.4";
@@ -105,4 +107,34 @@ function testLoopDetection() {
   console.log(checkLoopDetection(linkedList));
 }
 
-testLoopDetection();
+function testStack() {
+  const stack = new Stack<number>();
+
+  stack.push(4);
+  stack.push(6);
+  stack.push(1);
+  stack.push(80);
+  console.log(stack.pop());
+
+  console.log(stack.toString());
+}
+
+function testQueue() {
+  const queue = new Queue<number>();
+
+  queue.add(2);
+  queue.remove();
+  queue.add(2);
+  queue.add(3);
+  queue.add(4);
+  queue.add(5);
+  queue.add(6);
+  queue.add(7);
+  queue.add(8);
+
+  queue.remove();
+
+  console.log(queue.toString());
+}
+
+testQueue();
