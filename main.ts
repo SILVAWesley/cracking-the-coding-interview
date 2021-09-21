@@ -16,6 +16,7 @@ import { checkPalindromeLinkedList } from "./questions/2.6";
 import { checkIntersection } from "./questions/2.7";
 import { checkLoopDetection } from "./questions/2.8";
 import { StackMin } from "./questions/3.2";
+import { ThreeInOne } from "./questions/3.1";
 
 function testLinkedList() {
   const linkedList = new LinkedList();
@@ -152,4 +153,20 @@ function testStackMin() {
   console.log(stack.getMin());
 }
 
-testStackMin();
+function testThreeInOne() {
+  const stack = new ThreeInOne();
+
+  stack.push(0, 0);
+  stack.push(1, 0);
+  stack.push(2, 0);
+
+  stack.push(5, 1);
+
+  stack.pop(1);
+  stack.pop(0);
+  console.log(stack.peek(0));
+
+  console.log(stack.toString());
+}
+
+testThreeInOne();
