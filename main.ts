@@ -5,7 +5,9 @@
  * 2.7 - Solution
  */
 
+import { Hashtable } from "./datastructures/hashtable";
 import { LinkedList } from "./datastructures/linkedlist";
+import { ArrayList } from "../datastructures/arraylist";
 import { Stack } from "./datastructures/stack";
 import { Queue } from "./datastructures/queue";
 import { returnKthToLast } from "./questions/2.2";
@@ -17,6 +19,96 @@ import { checkIntersection } from "./questions/2.7";
 import { checkLoopDetection } from "./questions/2.8";
 import { StackMin } from "./questions/3.2";
 import { ThreeInOne } from "./questions/3.1";
+import { allUnique } from "./questions/1.1";
+import { checkPermutation } from "./questions/1.2";
+import { urlify } from "./questions/1.3";
+import { checkPalindromePermutation } from "./questions/1.4";
+import { checkOneWay } from "./questions/1.5";
+import { compressString } from "./questions/1.6";
+import { rotateMatrix } from "./questions/1.7";
+import { zeroMatrix } from "./questions/1.8";
+
+const testHashtable = () => {
+  const myTable = new Hashtable<number>(10);
+
+  myTable.add("mystring", 100);
+
+  console.log(myTable.get("mystring"));
+  console.log(myTable.remove("mystring"));
+
+  console.log(myTable.toString());
+};
+
+const testArraylist = () => {
+  const myArrayList = new ArrayList<string>(1);
+  myArrayList.add("hello");
+  myArrayList.add("231");
+  myArrayList.add("444");
+  myArrayList.add("231232");
+  myArrayList.add("231232");
+  console.log(myArrayList.get(4));
+  console.log(myArrayList.remove(0));
+  console.log(myArrayList.remove(3));
+  console.log(myArrayList.remove(2));
+  console.log(myArrayList.toString());
+};
+
+const testAllUnique = () => {
+  console.log(allUnique(""));
+};
+
+const testCheckPermutation = () => {
+  console.log(checkPermutation("lloe", "hello"));
+};
+
+const testURLify = () => {
+  console.log(urlify("Mr John Smith", 15));
+};
+
+const testPermutationPalindrome = () => {
+  console.log(checkPalindromePermutation("taco cat"));
+};
+
+const testCheckOneWay = () => {
+  console.log(checkOneWay("pale", "ple"));
+  console.log(checkOneWay("pales", "pale"));
+  console.log(checkOneWay("pale", "bale"));
+  console.log(checkOneWay("plea", "ple"));
+  console.log(checkOneWay("plea", "plea"));
+  console.log(checkOneWay("pale", "bake"));
+};
+
+const testCompressString = () => {
+  console.log(compressString("hellooooooooooo"));
+  console.log(compressString("aabcccccaaa"));
+};
+
+const testRotateMatrix = () => {
+  console.log(
+    rotateMatrix([
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9],
+    ])
+  );
+
+  console.log(
+    rotateMatrix([
+      [1, 2],
+      [3, 4],
+    ])
+  );
+};
+
+const testZeroMatrix = () => {
+  console.log(
+    zeroMatrix([
+      [1, 0, 1],
+      [1, 1, 1],
+      [1, 2, 1],
+    ])
+  );
+};
 
 function testLinkedList() {
   const linkedList = new LinkedList();
