@@ -29,6 +29,8 @@ import { rotateMatrix } from "./questions/1.7";
 import { zeroMatrix } from "./questions/1.8";
 import { StackOfPlates } from "./questions/3.3";
 import { MyQueue } from "./questions/3.4";
+import { sortStack } from "./questions/3.5";
+import { AnimalShelter } from "./questions/3.6";
 
 const testHashtable = () => {
   const myTable = new Hashtable<number>(10);
@@ -285,4 +287,36 @@ function testQueueViaStack() {
   console.log(queue.peek());
 }
 
-testQueueViaStack();
+function testSortStack() {
+  const stack = new Stack<number>();
+
+  stack.push(1);
+  stack.push(2);
+  stack.push(5);
+  stack.push(5);
+  stack.push(8);
+  stack.push(10);
+
+  console.log(sortStack(stack).toString());
+}
+
+function testAnimalShelter() {
+  const shelter = new AnimalShelter();
+
+  shelter.enqueue("dog");
+  shelter.enqueue("cat");
+  shelter.dequeueAny();
+  shelter.dequeueAny();
+  shelter.enqueue("dog");
+  shelter.dequeueCat();
+  shelter.dequeueDog();
+  shelter.enqueue("cat");
+  shelter.enqueue("cat");
+  shelter.enqueue("dog");
+  shelter.enqueue("cat");
+  shelter.dequeueDog();
+  shelter.dequeueCat();
+  console.log(shelter.toString());
+}
+
+testAnimalShelter();
