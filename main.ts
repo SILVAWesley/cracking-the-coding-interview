@@ -27,6 +27,8 @@ import { checkOneWay } from "./questions/1.5";
 import { compressString } from "./questions/1.6";
 import { rotateMatrix } from "./questions/1.7";
 import { zeroMatrix } from "./questions/1.8";
+import { StackOfPlates } from "./questions/3.3";
+import { MyQueue } from "./questions/3.4";
 
 const testHashtable = () => {
   const myTable = new Hashtable<number>(10);
@@ -261,4 +263,26 @@ function testThreeInOne() {
   console.log(stack.toString());
 }
 
-testThreeInOne();
+function testStackOfPlates() {
+  const stack = new StackOfPlates(1);
+
+  stack.push(5);
+  stack.push(6);
+  stack.push(7);
+  stack.push(8);
+  stack.pop();
+  stack.pop();
+  stack.push(10);
+  console.log(stack.toString());
+}
+
+function testQueueViaStack() {
+  const queue = new MyQueue();
+
+  queue.add(1);
+  queue.add(2);
+
+  console.log(queue.peek());
+}
+
+testQueueViaStack();
