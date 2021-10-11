@@ -31,6 +31,7 @@ import { StackOfPlates } from "./questions/3.3";
 import { MyQueue } from "./questions/3.4";
 import { sortStack } from "./questions/3.5";
 import { AnimalShelter } from "./questions/3.6";
+import { BfsGraphNode, routeBetweenNodes } from "./questions/4.1";
 
 const testHashtable = () => {
   const myTable = new Hashtable<number>(10);
@@ -319,4 +320,22 @@ function testAnimalShelter() {
   console.log(shelter.toString());
 }
 
-testAnimalShelter();
+function testRouteBetweenNodes() {
+  const node0: BfsGraphNode<number> = new BfsGraphNode<number>(0);
+  const node1: BfsGraphNode<number> = new BfsGraphNode<number>(1);
+  const node2: BfsGraphNode<number> = new BfsGraphNode<number>(2);
+  const node3: BfsGraphNode<number> = new BfsGraphNode<number>(3);
+  const node4: BfsGraphNode<number> = new BfsGraphNode<number>(4);
+  const node5: BfsGraphNode<number> = new BfsGraphNode<number>(5);
+
+  node0.children = [node1, node4, node5];
+  node1.children = [node3, node4];
+  node2.children = [node1];
+  node3.children = [node2, node4];
+  node4.children = [];
+  node5.children = [];
+
+  console.log(routeBetweenNodes(node2, node5));
+}
+
+testRouteBetweenNodes();
