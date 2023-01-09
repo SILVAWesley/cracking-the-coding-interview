@@ -7,7 +7,7 @@
 
 import { Hashtable } from "./datastructures/hashtable";
 import { LinkedList } from "./datastructures/linkedlist";
-import { ArrayList } from "../datastructures/arraylist";
+import { ArrayList } from "./datastructures/arraylist";
 import { Stack } from "./datastructures/stack";
 import { Queue } from "./datastructures/queue";
 import { returnKthToLast } from "./questions/2.2";
@@ -21,7 +21,7 @@ import { StackMin } from "./questions/3.2";
 import { ThreeInOne } from "./questions/3.1";
 import { allUnique } from "./questions/1.1";
 import { checkPermutation } from "./questions/1.2";
-import { urlify } from "./questions/1.3";
+import { urlify, urlify2 } from "./questions/1.3";
 import { checkPalindromePermutation } from "./questions/1.4";
 import { checkOneWay } from "./questions/1.5";
 import { compressString } from "./questions/1.6";
@@ -63,15 +63,16 @@ const testAllUnique = () => {
 };
 
 const testCheckPermutation = () => {
-  console.log(checkPermutation("lloe", "hello"));
+  console.log(checkPermutation("hello", "hello"));
 };
 
 const testURLify = () => {
   console.log(urlify("Mr John Smith", 15));
+  console.log(urlify2("Mr John Smith"));
 };
 
 const testPermutationPalindrome = () => {
-  console.log(checkPalindromePermutation("taco cat"));
+  console.log(checkPalindromePermutation("tac coa"));
 };
 
 const testCheckOneWay = () => {
@@ -338,4 +339,4 @@ function testRouteBetweenNodes() {
   console.log(routeBetweenNodes(node2, node5));
 }
 
-testRouteBetweenNodes();
+testPermutationPalindrome();

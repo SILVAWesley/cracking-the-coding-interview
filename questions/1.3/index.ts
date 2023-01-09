@@ -16,3 +16,22 @@ export function urlify(input: string, size: number) {
 
   return temp;
 }
+
+import { StringBuilder } from "../../datastructures/stringbuilder";
+
+/**
+ * Using string builder
+ */
+export function urlify2(str: string) {
+  const url = new StringBuilder();
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === " ") {
+      url.append("%20");
+    } else {
+      url.append(str[i]);
+    }
+  }
+
+  return url.toString();
+}
