@@ -23,8 +23,8 @@ import { allUnique } from "./questions/1.1";
 import { checkPermutation } from "./questions/1.2";
 import { urlify, urlify2 } from "./questions/1.3";
 import { checkPalindromePermutation } from "./questions/1.4";
-import { checkOneWay } from "./questions/1.5";
-import { compressString } from "./questions/1.6";
+import { checkOneAway, checkOneAway2 } from "./questions/1.5";
+import { compressString, compressString2 } from "./questions/1.6";
 import { rotateMatrix } from "./questions/1.7";
 import { zeroMatrix } from "./questions/1.8";
 import { StackOfPlates } from "./questions/3.3";
@@ -75,16 +75,32 @@ const testPermutationPalindrome = () => {
   console.log(checkPalindromePermutation("tac coa"));
 };
 
-const testCheckOneWay = () => {
-  console.log(checkOneWay("pale", "ple"));
-  console.log(checkOneWay("pales", "pale"));
-  console.log(checkOneWay("pale", "bale"));
-  console.log(checkOneWay("plea", "ple"));
-  console.log(checkOneWay("plea", "plea"));
-  console.log(checkOneWay("pale", "bake"));
+const testCheckOneAway = () => {
+  console.log(checkOneAway("pale", "ple"));
+  console.log(checkOneAway("pales", "pale"));
+  console.log(checkOneAway("pale", "bale"));
+  console.log(checkOneAway("plea", "ple"));
+  console.log(checkOneAway("plea", "plea"));
+  console.log(checkOneAway("pale", "bake"));
+};
+
+const testCheckOneAway2 = () => {
+  console.log(checkOneAway2("pale", "ple"));
+  console.log(checkOneAway2("pales", "pale"));
+  console.log(checkOneAway2("plea", "ple"));
+  console.log(checkOneAway2("pale", "bale"));
+  console.log(checkOneAway2("plea", "plea"));
+  console.log(checkOneAway2("pale", "bake"));
 };
 
 const testCompressString = () => {
+  console.log(compressString("hellooooooooooo"));
+  console.log(compressString("aabcccccaaa"));
+};
+
+const testCompressString2 = () => {
+  console.log(compressString2("hellooooooooooo"));
+  console.log(compressString2("aabcccccaaa"));
   console.log(compressString("hellooooooooooo"));
   console.log(compressString("aabcccccaaa"));
 };
@@ -339,4 +355,4 @@ function testRouteBetweenNodes() {
   console.log(routeBetweenNodes(node2, node5));
 }
 
-testPermutationPalindrome();
+testCompressString2();

@@ -29,3 +29,31 @@ export function compressString(input: string) {
 
   return result;
 }
+
+export function compressString2(str: string) {
+  let newStr = "";
+
+  let counter = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    const current = str[i];
+    const previous = str[i - 1];
+
+    if (i === 0) {
+      counter++;
+    } else if (i === str.length - 1) {
+      newStr += `${current}${counter + 1}`;
+    } else if (current !== previous) {
+      newStr += `${previous}${counter}`;
+      counter = 1;
+    } else {
+      counter++;
+    }
+  }
+
+  if (newStr.length >= str.length) {
+    return str;
+  } else {
+    return newStr;
+  }
+}

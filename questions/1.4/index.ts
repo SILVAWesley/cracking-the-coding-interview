@@ -33,3 +33,37 @@ export function checkPalindromePermutation(input: string) {
 
   return { has: true, permutations: [] };
 }
+
+export function checkPalindromePermutation2(str: string) {
+  const letterFrequency = {};
+
+  // O(N)
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === " ") {
+      continue;
+    }
+
+    if (!letterFrequency[str[i]]) {
+      letterFrequency[str[i]] = 0;
+    }
+
+    letterFrequency[str[i]]++;
+  }
+
+  // O(1) Considering that the set of letters is limited
+  const allLetters = Object.keys(letterFrequency);
+  let hasOneOdd = false;
+
+  //  O(1)
+  for (let i = 0; i < allLetters.length; i++) {
+    if (letterFrequency[allLetters[i]] % 2 !== 0) {
+      if (hasOneOdd) {
+        return false;
+      } else {
+        hasOneOdd = true;
+      }
+    }
+  }
+
+  return true;
+}
